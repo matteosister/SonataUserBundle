@@ -33,6 +33,7 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->booleanNode('security_acl')->defaultValue(false)->end()
+                ->scalarNode('translation_domain')->defaultValue('SonataUserBundle')->end()
                 ->arrayNode('table')
                     ->addDefaultsIfNotSet()
                     ->children()

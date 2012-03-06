@@ -46,6 +46,9 @@ class SonataUserExtension extends Extension
             $loader->load('security_acl.xml');
         }
 
+        $translation_domain = isset($configs['translation_domain']) ? $configs['translation_domain'] : $config['translation_domain'];
+        $container->setParameter('sonata.user.admin.user.translation_domain', $translation_domain);
+
         $config = $this->addDefaults($config);
 
         $this->registerDoctrineMapping($config);
